@@ -14,7 +14,7 @@ tags:
 
 This is an example [NextJS](https://nextjs.org/) app that uses [Prisma](https://www.prisma.io/) with [tRPC](https://trpc.io/).
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/V-kyCM)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/CgBw9O?referralCode=milo)
 
 ## Features
 
