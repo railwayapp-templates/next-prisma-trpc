@@ -16,12 +16,14 @@ This is an example [NextJS](https://nextjs.org/) app that uses [Prisma](https://
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/V-kyCM)
 
-## ✨ Features
+## Features
 
-- NextJS
-- Prisma
-- PostgreSQL
-- E2E typesafety with [tRPC](https://trpc.io)
+- 🧙‍♂️ E2E typesafety with [tRPC](https://trpc.io)
+- ⚡ Full-stack React with Next.js
+- ⚡ Database with Prisma
+- ⚙️ VSCode extensions
+- 🎨 ESLint + Prettier
+- 🔐 Validates your env vars on build and start
 
 ## 💁‍♀️ How to use
 

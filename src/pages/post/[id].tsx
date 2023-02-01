@@ -1,10 +1,29 @@
-import { useRouter } from 'next/dist/client/router';
-import { trpc } from 'utils/trpc';
 import NextError from 'next/error';
+import { useRouter } from 'next/router';
+import { NextPageWithLayout } from '~/pages/_app';
+import { RouterOutput, trpc } from '~/utils/trpc';
 
-export default function PostViewPage() {
+type PostByIdOutput = RouterOutput['post']['byId'];
+
+function PostItem(props: { post: PostByIdOutput }) {
+  const { post } = props;
+  return (
+    <>
+      <h1>{post.title}</h1>
+      <em>Created {post.createdAt.toLocaleDateString('en-us')}</em>
+
+      <p>{post.text}</p>
+
+      <h2>Raw data:</h2>
+      <pre>{JSON.stringify(post, null, 4)}</pre>
+    </>
+  );
+}
+
+const PostViewPage: NextPageWithLayout = () => {
   const id = useRouter().query.id as string;
-  const postQuery = trpc.useQuery(['post.byId', id]);
+  const postQuery = trpc.post.byId.useQuery({ id });
+
   if (postQuery.error) {
     return (
       <NextError
@@ -13,17 +32,12 @@ export default function PostViewPage() {
       />
     );
   }
+
   if (postQuery.status !== 'success') {
     return <>Loading...</>;
   }
   const { data } = postQuery;
-  return (
-    <>
-      <h1>{data.title}</h1>
-      <p>{data.text}</p>
+  return <PostItem post={data} />;
+};
 
-      <h2>Raw data:</h2>
-      <pre>{JSON.stringify(data, null, 4)}</pre>
-    </>
-  );
-}
+export default PostViewPage;
