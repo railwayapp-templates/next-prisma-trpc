@@ -23,9 +23,6 @@ This is an example [NextJS](https://nextjs.org/) app that uses [Prisma](https://
 - ⚡ Database with Prisma
 - ⚙️ VSCode extensions
 - 🎨 ESLint + Prettier
-- 💚 CI setup using GitHub Actions:
-  - ✅ E2E testing with [Playwright](https://playwright.dev/)
-  - ✅ Linting
 - 🔐 Validates your env vars on build and start
 
 ## 💁‍♀️ How to use
